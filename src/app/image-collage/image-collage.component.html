@@ -1,0 +1,12 @@
+<div class="collage">
+    <div class="image" *ngFor="let image of images">
+      <img [src]="image.download_url" alt="{{ image.author }}">
+    </div>
+    <div class="loading" *ngIf="!images.length">
+      Loading...
+    </div>
+  </div>
+  
+  <!-- ngx-infinite-scroll directive -->
+  <div infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance" (scrolled)="onScroll()"></div>
+  
